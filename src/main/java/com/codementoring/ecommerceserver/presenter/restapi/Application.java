@@ -1,13 +1,13 @@
-package com.codementoring.ecommerceserver;
+package com.codementoring.ecommerceserver.presenter.restapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EcommerceserverApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EcommerceserverApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }
