@@ -8,4 +8,5 @@ public interface ProductCategoryRepository {
 
     List<ProductCategory> getAllProductCategories();
 
+    List<ProductCategory> searchProductCategoryByName(String productCategoryName);
 }
