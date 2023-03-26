@@ -14,25 +14,27 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.doReturn;
 
 @RunWith(MockitoJUnitRunner.class)
-public class GetAllProductCategoriesUseCaseTest {
+public class SearchProductCategoryByNameUseCaseTest {
 
     @Mock
     private ProductCategoryRepository productCategoryRepository;
+
     @InjectMocks
-    private GetAllProductCategoriesUseCase getAllProductCategoriesUseCase;
+    private SearchProductCategoryByNameUseCase searchProductCategoryByNameUseCase;
 
     @Test
-    public void getAllProductCategoriesTest() {
+    public void searchProductCategoryByNameTest() {
         // Given
         List<ProductCategory> productCategories = TestCoreEntityGenerator.randomProductCategories();
-        GetAllProductCategoriesUseCase.InputValues input = new GetAllProductCategoriesUseCase.InputValues();
+        String searchText = "abc";
+        SearchProductCategoryByNameUseCase.InputValues input = new SearchProductCategoryByNameUseCase.InputValues(searchText);
 
         doReturn(productCategories)
                 .when(productCategoryRepository)
-                .getAllProductCategories();
+                .searchProductCategoryByName(searchText);
 
         // When
-        final List<ProductCategory> actualListOfProductCategories = getAllProductCategoriesUseCase.execute(input).getProductCategories();
+        final List<ProductCategory> actualListOfProductCategories = searchProductCategoryByNameUseCase.execute(input).getProductCategories();
 
         // Then
         assertThat(actualListOfProductCategories).isEqualTo(productCategories);
