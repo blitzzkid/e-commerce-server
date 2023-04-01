@@ -5,7 +5,7 @@ plugins {
 	id "org.flywaydb.flyway" version "9.15.0"
 }
 
-group = 'com.codementoring'
+group = 'com'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 

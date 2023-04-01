@@ -1,7 +1,7 @@
-package com.codementoring.ecommerceserver.core.usecases.productcategory;
+package com.ecommerceserver.core.usecases.productcategory;
 
-import com.codementoring.ecommerceserver.core.domain.ProductCategory;
-import com.codementoring.ecommerceserver.core.entities.TestCoreEntityGenerator;
+import com.ecommerceserver.core.domain.ProductCategory;
+import com.ecommerceserver.core.entities.TestCoreEntityGenerator;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;

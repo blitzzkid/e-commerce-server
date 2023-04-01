@@ -1,4 +1,4 @@
-package com.codementoring.ecommerceserver.presenter.restapi;
+package com.ecommerceserver.presenter.restapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

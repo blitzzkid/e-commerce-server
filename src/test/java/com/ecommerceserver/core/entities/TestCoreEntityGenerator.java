@@ -1,7 +1,7 @@
-package com.codementoring.ecommerceserver.core.entities;
+package com.ecommerceserver.core.entities;
 
-import com.codementoring.ecommerceserver.core.domain.Identity;
-import com.codementoring.ecommerceserver.core.domain.ProductCategory;
+import com.ecommerceserver.core.domain.Identity;
+import com.ecommerceserver.core.domain.ProductCategory;
 import com.github.javafaker.Faker;
 
 import java.util.List;

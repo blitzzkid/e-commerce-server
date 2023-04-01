@@ -1,4 +1,4 @@
-package com.codementoring.ecommerceserver.core.domain;
+package com.ecommerceserver.core.domain;
 
 import lombok.Value;
 

@@ -1,4 +1,4 @@
-package com.codementoring.ecommerceserver.core.usecases;
+package com.ecommerceserver.core.usecases;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;

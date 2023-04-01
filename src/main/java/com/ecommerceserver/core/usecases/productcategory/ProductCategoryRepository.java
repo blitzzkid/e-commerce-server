@@ -1,6 +1,6 @@
-package com.codementoring.ecommerceserver.core.usecases.productcategory;
+package com.ecommerceserver.core.usecases.productcategory;
 
-import com.codementoring.ecommerceserver.core.domain.ProductCategory;
+import com.ecommerceserver.core.domain.ProductCategory;
 
 import java.util.List;
 

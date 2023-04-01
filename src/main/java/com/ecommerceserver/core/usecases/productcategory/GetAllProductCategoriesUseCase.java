@@ -1,7 +1,7 @@
-package com.codementoring.ecommerceserver.core.usecases.productcategory;
+package com.ecommerceserver.core.usecases.productcategory;
 
-import com.codementoring.ecommerceserver.core.domain.ProductCategory;
-import com.codementoring.ecommerceserver.core.usecases.UseCase;
+import com.ecommerceserver.core.domain.ProductCategory;
+import com.ecommerceserver.core.usecases.UseCase;
 import lombok.Value;
 
 import java.util.List;

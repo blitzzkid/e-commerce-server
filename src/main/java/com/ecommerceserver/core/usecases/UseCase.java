@@ -1,4 +1,4 @@
-package com.codementoring.ecommerceserver.core.usecases;
+package com.ecommerceserver.core.usecases;
 
 public abstract class UseCase<I extends UseCase.InputValues, O extends UseCase.OutputValues> {
     public abstract O execute(I input);
