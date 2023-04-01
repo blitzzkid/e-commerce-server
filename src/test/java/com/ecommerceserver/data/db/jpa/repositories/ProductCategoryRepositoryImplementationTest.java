@@ -40,4 +40,21 @@ public class ProductCategoryRepositoryImplementationTest {
         // Then
         assertThat(actualListOfProductCategories).contains(productCategory);
     }
+
+    @Test
+    public void searchProductCategoryByNameTest() {
+        // Given
+        ProductCategory productCategory = TestCoreEntityGenerator.randomProductCategory();
+        ProductCategoryData productCategoryData = ProductCategoryData.from(productCategory);
+        String searchText = "abc";
+
+        doReturn(Collections.singletonList(productCategoryData))
+                .when(jpaProductCategoryRepository)
+                .findByNameContainingIgnoreCase(searchText);
+        // When
+        final List<ProductCategory> actualListOfProductCategories = productCategoryRepositoryImplementation.searchProductCategoryByName(searchText);
+
+        // Then
+        assertThat(actualListOfProductCategories).isEqualTo(Collections.singletonList(productCategory));
+    }
 }
