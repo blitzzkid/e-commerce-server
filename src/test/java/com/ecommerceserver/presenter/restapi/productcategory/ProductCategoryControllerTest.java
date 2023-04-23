@@ -76,4 +76,29 @@ public class ProductCategoryControllerTest extends BaseControllerTest {
                 .andExpect(jsonPath("$[0].id", is(firstProductCategory.getId().getNumber().intValue())))
                 .andExpect(jsonPath("$[0].name", is(firstProductCategory.getName())));
     }
+
+    @Test
+    public void getAllMatchingProductCategoriesByNameReturnsOk() throws Exception {
+        // Given
+        List<ProductCategory> productCategories = TestCoreEntityGenerator.randomProductCategories();
+        ProductCategory firstProductCategory = productCategories.get(0);
+
+        SearchProductCategoryByNameUseCase.InputValues inputValues = new SearchProductCategoryByNameUseCase.InputValues("abc");
+        SearchProductCategoryByNameUseCase.OutputValues outputValues = new SearchProductCategoryByNameUseCase.OutputValues(productCategories);
+
+        doReturn(outputValues)
+                .when(searchProductCategoryByNameUseCase)
+                .execute(inputValues);
+
+        // When
+        final RequestBuilder payload = asyncGetRequest("/ProductCategory/search/abc");
+
+        // Then
+        mockMvc.perform(payload)
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(jsonPath("$", hasSize(productCategories.size())))
+                .andExpect(jsonPath("$[0].id", is(firstProductCategory.getId().getNumber().intValue())))
+                .andExpect(jsonPath("$[0].name", is(firstProductCategory.getName())));
+    }
 }
