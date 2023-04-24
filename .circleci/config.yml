@@ -1,0 +1,33 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:17-jdk-buster
+    working_directory: ~/repo
+
+    environment:
+      # Customize the JVM maximum heap limit
+      JVM_OPTS: -Xmx3200m
+      TERM: dumb
+
+    steps:
+      - checkout
+      - run:
+          name: Build with Gradle
+          command: ./gradlew build
+
+      - run:
+          name: Run Tests
+          command: ./gradlew test
+
+      - store_artifacts:
+          path: build/reports/tests
+          destination: test-reports
+      - store_artifacts:
+          path: build/libs/*.jar
+          destination: jars
+
+workflows:
+  build:
+    jobs:
+      - build
