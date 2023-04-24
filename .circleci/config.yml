@@ -15,9 +15,17 @@ jobs:
       - run:
           name: Build with Gradle
           command: ./gradlew build
+
       - run:
           name: Run Tests
           command: ./gradlew test
+
+      - store_artifacts:
+          path: build/reports/tests
+          destination: test-reports
+      - store_artifacts:
+          path: build/libs/*.jar
+          destination: jars
 
 workflows:
   build:
