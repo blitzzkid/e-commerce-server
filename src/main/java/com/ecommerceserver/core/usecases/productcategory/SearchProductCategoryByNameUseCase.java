@@ -3,9 +3,11 @@ package com.ecommerceserver.core.usecases.productcategory;
 import com.ecommerceserver.core.domain.ProductCategory;
 import com.ecommerceserver.core.usecases.UseCase;
 import lombok.Value;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class SearchProductCategoryByNameUseCase extends UseCase<SearchProductCategoryByNameUseCase.InputValues, SearchProductCategoryByNameUseCase.OutputValues> {
 
     private final ProductCategoryRepository productCategoryRepository;
